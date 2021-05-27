@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BulletinService } from '../bulletin.service';
 @Component({
   selector: 'app-bulletin',
   templateUrl: './bulletin.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BulletinComponent implements OnInit {
 
-  constructor() { }
+  documents = []
+  constructor(private _bulletinService: BulletinService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this._bulletinService.getBulletin()
+    .subscribe(
+      res => this.documents = res,
+      err => console.log(err)
+    )
   }
 
 }

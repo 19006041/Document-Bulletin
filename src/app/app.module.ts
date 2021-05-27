@@ -11,6 +11,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { HttpInterceptor } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { BulletinService } from './bulletin.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard, {
+  providers: [AuthService, BulletinService, AuthGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
