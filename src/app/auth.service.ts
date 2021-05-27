@@ -23,5 +23,9 @@ export class AuthService {
     //returning a true or false depending on whether a token is present.
     return !!localStorage.getItem('token')
   }
+
+  getToken(){
+    return localStorage.getItem('token')
+  }
 }
 
