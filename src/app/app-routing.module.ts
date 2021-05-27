@@ -3,16 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { BulletinComponent } from './bulletin/bulletin.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo: '/bulletin',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
     path: 'bulletin',
-    component: BulletinComponent
+    component: BulletinComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
