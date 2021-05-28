@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -17,16 +18,21 @@ export class RegisterComponent implements OnInit {
   }
 
 
-registerUser(){
-this._auth.registerUser(this.registerUserData)
-.subscribe(
-  res => {
-    console.log(res)
-    localStorage.setItem('token', res.token)
-    this._router.navigate(['/bulletin'])
-  },
-  err => console.log(err)
-)
+registerUser(regForm:NgForm){
+
+  if(regForm.valid){
+    this._auth.registerUser(this.registerUserData)
+    .subscribe(
+      res => {
+        console.log(res)
+        localStorage.setItem('token', res.token)
+        this._router.navigate(['/bulletin'])
+      },
+      err => console.log(err)
+    )
+  }
+
+
 }
 
 }

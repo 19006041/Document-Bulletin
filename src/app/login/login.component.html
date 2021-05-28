@@ -7,6 +7,9 @@
       <div class="card rounded-0">
         <div class="card-header">
           <h3 class="mb-0">Login</h3>
+          <div *ngIf="logForm.invalid && !logForm.untouched" >
+            <p>Please ensure the correct credentials are entered</p>
+          </div>
         </div>
         <div class="card-body">
           <form #logForm="ngForm" (ngSubmit)="loginUser(logForm)" class="form" novalidate>

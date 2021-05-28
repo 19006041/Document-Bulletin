@@ -1,0 +1,12 @@
+input.ng-invalid
+{
+border-color: red;
+}
+
+input.ng-untouched{
+  border-color: #ced4da;
+}
+
+p{
+  color: red;
+}
