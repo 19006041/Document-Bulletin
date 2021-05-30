@@ -29,7 +29,7 @@
             <div class="form-group" [class.has-error]="details.invalid && details.touched">
               <label for="details" class="control-label">Document Details</label>
 
-              <input required pattern="^(\+27|0)[6-8][0-9]{8}$" id="details" type="text" class="form-control"
+              <input required pattern="^[\w ]+$" id="details" type="text" class="form-control"
                 name="details" [(ngModel)]="createDocumentData.details" #details="ngModel" >
               <span class="help-block" *ngIf="details.errors?.required && details.touched">
                 <p>{{requiredDetailsError}}</p>
