@@ -13,17 +13,8 @@ export class BulletinComponent implements OnInit {
   constructor(private _bulletinService: BulletinService,  private _router: Router) { }
 
   ngOnInit() {
-    this._bulletinService.getBulletin()
-    .subscribe(
-      res => this.documents = res,
-      err => {
-        if (err instanceof HttpErrorResponse){
-          if (err.status == 401){
-            this._router.navigate(['/login'])
-          }
-        }
-      }
-    )
+    this.documents = this._bulletinService.getBulletin()
+
   }
 
   create(){

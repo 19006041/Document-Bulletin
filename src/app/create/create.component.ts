@@ -21,17 +21,8 @@ export class CreateComponent implements OnInit {
     private _router: Router) { }
 
     ngOnInit() {
-      this._bulletinService.getBulletin()
-      .subscribe(
-        res => this.documents = res,
-        err => {
-          if (err instanceof HttpErrorResponse){
-            if (err.status == 401){
-              this._router.navigate(['/login'])
-            }
-          }
-        }
-      )
+      this.documents = this._bulletinService.getBulletin()
+
     }
 
 
@@ -46,7 +37,6 @@ export class CreateComponent implements OnInit {
    }
 
     this.documents.push(doc)
-    console.log(this.documents[6].name)
 
   }
 
