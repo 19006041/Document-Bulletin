@@ -28,15 +28,24 @@ export class CreateComponent implements OnInit {
 
   createDocument(logForm:NgForm){
 
+    var index = this.documents.length-1;
+    var id = this.documents[index]._id;
+
+
+    const d: Date = new Date();
+
+
+
 
     const doc = {
-      _id: "40",
+      _id: id,
       name: this.createDocumentData.title,
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      description: this.createDocumentData.details,
+      date: d,
    }
 
     this.documents.push(doc)
+    this._router.navigate(['/bulletin'])
 
   }
 
