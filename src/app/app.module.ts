@@ -12,13 +12,15 @@ import { AuthGuard } from './auth.guard';
 import { HttpInterceptor } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { BulletinService } from './bulletin.service';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    BulletinComponent
+    BulletinComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

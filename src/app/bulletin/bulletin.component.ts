@@ -26,4 +26,10 @@ export class BulletinComponent implements OnInit {
     )
   }
 
+  create(){
+    this._router.navigate(['/create'])
+  }
+
+
+
 }

@@ -4,6 +4,7 @@ import { BulletinComponent } from './bulletin/bulletin.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
+import { CreateComponent } from './create/create.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path:'create',
+    component: CreateComponent
   }
 ];
 
