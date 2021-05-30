@@ -11,6 +11,10 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
 
+  requiredEmailError = 'Email is required';
+  invalidEmailError = 'Email is invalid';
+  passwordError = 'Password is required';
+
   loginUserData:any = {}
   constructor(private _auth: AuthService,
     private _router: Router) { }
