@@ -6,33 +6,24 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  registerUserData: any = {};
+  constructor(private _auth: AuthService, private _router: Router) {}
 
-  registerUserData:any = {}
-  constructor(private _auth: AuthService,
-  private _router: Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  registerUser(regForm: NgForm) {
+    if (regForm.valid) {
+      this._auth.registerUser(this.registerUserData).subscribe(
+        (res) => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this._router.navigate(['/bulletin']);
+        },
+        (err) => console.log(err)
+      );
+    }
   }
-
-
-registerUser(regForm:NgForm){
-
-  if(regForm.valid){
-    this._auth.registerUser(this.registerUserData)
-    .subscribe(
-      res => {
-        console.log(res)
-        localStorage.setItem('token', res.token)
-        this._router.navigate(['/bulletin'])
-      },
-      err => console.log(err)
-    )
-  }
-
-
-}
-
 }

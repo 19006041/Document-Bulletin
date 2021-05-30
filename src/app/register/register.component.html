@@ -1,4 +1,3 @@
-
 <div class="py-5">
   <div class="row">
     <div class="col-md-6 mx-auto">
@@ -8,17 +7,16 @@
       <div class="card rounded-0">
         <div class="card-header">
           <h3 class="mb-0">Register</h3>
-       <!--    <div *ngIf="regForm.invalid && !regForm.untouched" >
+          <!--    <div *ngIf="regForm.invalid && !regForm.untouched" >
             <p>Please ensure all the correct credentials are entered</p>
           </div> -->
         </div>
         <div class="card-body">
-          <form #regForm="ngForm" (ngSubmit)="registerUser(regForm)" class="form"  novalidate>
+          <form #regForm="ngForm" (ngSubmit)="registerUser(regForm)" class="form" novalidate>
             <div class="form-group" [class.has-error]="email.invalid && email.touched">
               <label for="email" class="control-label">Email</label>
-              <input required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-                     id="email" type="text" class="form-control" name="email"
-                     [(ngModel)]="registerUserData.email" #email="ngModel">
+              <input required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" id="email" type="text"
+                class="form-control" name="email" [(ngModel)]="registerUserData.email" #email="ngModel">
               <span class="help-block" *ngIf="email.errors?.required && email.touched">
                 <p>Email is required</p>
               </span>
@@ -28,9 +26,8 @@
             </div>
             <div class="form-group" [class.has-error]="number.invalid && number.touched">
               <label for="number" class="control-label">Cell Phone Number</label>
-              <input required pattern="^(\+27|0)[6-8][0-9]{8}$"
-                     id="number" type="text" class="form-control" name="number"
-                     [(ngModel)]="registerUserData.number" #number="ngModel">
+              <input required pattern="^(\+27|0)[6-8][0-9]{8}$" id="number" type="text" class="form-control"
+                name="number" [(ngModel)]="registerUserData.number" #number="ngModel">
               <span class="help-block" *ngIf="number.errors?.required && number.touched">
                 <p>Contact Number is required</p>
               </span>
@@ -40,9 +37,8 @@
             </div>
             <div class="form-group" [class.has-error]="password.invalid && password.touched">
               <label for="password" class="control-label">Password</label>
-              <input required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                     id="password" type="password" class="form-control" name="password"
-                     [(ngModel)]="registerUserData.password" #password="ngModel">
+              <input required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="password" type="password"
+                class="form-control" name="password" [(ngModel)]="registerUserData.password" #password="ngModel">
               <span class="help-block" *ngIf="password.errors?.required && password.touched">
                 <p>password is required</p>
               </span>
@@ -50,12 +46,11 @@
                 <p>Password should be a minimum of 8 characters and contain at least 1 number</p>
               </span>
             </div>
-
             <div class="form-group" [class.has-error]="confirmPassword.invalid && confirmPassword.touched">
               <label for="confirmPassword" class="control-label">Confirm Password</label>
-              <input required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                     id="confirmPassword" type="password" class="form-control" name="confirmPassword"
-                     [(ngModel)]="registerUserData.confirmPassword" #confirmPassword="ngModel">
+              <input required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="confirmPassword" type="password"
+                class="form-control" name="confirmPassword" [(ngModel)]="registerUserData.confirmPassword"
+                #confirmPassword="ngModel">
               <span class="help-block" *ngIf="confirmPassword.errors?.required && confirmPassword.touched">
                 <p>password is required</p>
               </span>
@@ -65,7 +60,7 @@
 
             </div>
             <br>
-            <input type="submit" value="Login"  class="btn btn-primary float-right"/>
+            <input type="submit" value="Login" class="btn btn-primary float-right" />
           </form>
 
 
