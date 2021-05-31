@@ -31,6 +31,8 @@ export class CreateComponent implements OnInit {
     var index = this.documents.length-1;
     var id = this.documents[index]._id;
 
+    id++;
+
 
     const d: Date = new Date();
 
@@ -44,6 +46,7 @@ export class CreateComponent implements OnInit {
       date: d,
    }
 
+   console.log(id);
     this.documents.push(doc)
     this._router.navigate(['/bulletin'])
 
