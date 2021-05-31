@@ -2,53 +2,54 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BulletinService {
-
+  //Array of document objects.
   bulletinArray = [
     {
-      _id: "1",
-      name: "National Health Budget",
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      _id: '1',
+      name: 'National Health Budget',
+      description: 'lorem ipsum',
+      date: '2012-04-23T18:25:43.511Z',
     },
     {
-      _id: "2",
-      name: "National Education Budget",
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      _id: '2',
+      name: 'National Education Budget',
+      description: 'lorem ipsum',
+      date: '2012-04-23T18:25:43.511Z',
     },
     {
-      _id: "3",
-      name: "Public Hospital Development",
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      _id: '3',
+      name: 'Public Hospital Development',
+      description: 'lorem ipsum',
+      date: '2012-04-23T18:25:43.511Z',
     },
     {
-      _id: "4",
-      name: "Public Transport Budget",
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      _id: '4',
+      name: 'Public Transport Budget',
+      description: 'lorem ipsum',
+      date: '2012-04-23T18:25:43.511Z',
     },
     {
-      _id: "5",
-      name: "RDP Housing Statistics",
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      _id: '5',
+      name: 'RDP Housing Statistics',
+      description: 'lorem ipsum',
+      date: '2012-04-23T18:25:43.511Z',
     },
     {
-      _id: "6",
-      name: "Power Station Developments",
-      description: "lorem ipsum",
-      date: "2012-04-23T18:25:43.511Z",
+      _id: '6',
+      name: 'Power Station Developments',
+      description: 'lorem ipsum',
+      date: '2012-04-23T18:25:43.511Z',
     },
   ];
 
   //private bulletinUrl = "http://localhost:3000/api/bulletin";
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getBulletin(){
+  //Returning the list of document objects.
+  getBulletin() {
     return this.bulletinArray;
   }
 }

@@ -5,53 +5,42 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-bulletin',
   templateUrl: './bulletin.component.html',
-  styleUrls: ['./bulletin.component.css']
+  styleUrls: ['./bulletin.component.css'],
 })
 export class BulletinComponent implements OnInit {
-
-  documents = []
-  constructor(private _bulletinService: BulletinService,  private _router: Router) { }
+  documents = [];
+  constructor(
+    private _bulletinService: BulletinService,
+    private _router: Router
+  ) {}
 
   ngOnInit() {
-    this.documents = this._bulletinService.getBulletin()
-
+    //Filling the documents page with data.
+    this.documents = this._bulletinService.getBulletin();
   }
 
-  create(){
-    this._router.navigate(['/create'])
+  create() {
+    //Showing the create page.
+    this._router.navigate(['/create']);
   }
 
-  deleteDoc(id){
+  deleteDoc(id) {
+    //Verify Deletion.
+    var c = confirm(
+      'Would you like to delete ' + id.name + ' from the bulletin?'
+    );
 
-    //console.log(id)
-
-    var c = confirm("Would you like to delete " + id.name + " from the bulletin?" );
-
-    if(c){
-      var index= 0;
-      this.documents.forEach(element => {
-
-
-        if(element == id){
-          console.log(id)
-          this.documents.splice(index, 1)
-        }else{
+    //Removing the document from the list of objects.
+    if (c) {
+      var index = 0;
+      this.documents.forEach((element) => {
+        if (element == id) {
+          console.log(id);
+          this.documents.splice(index, 1);
+        } else {
           index++;
         }
-
-
-
       });
     }
-
-
-
   }
-
-
 }
-
-
-
-
-
