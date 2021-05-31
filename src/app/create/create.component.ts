@@ -28,10 +28,18 @@ export class CreateComponent implements OnInit {
 
   createDocument(logForm:NgForm){
 
+    try{
     var index = this.documents.length-1;
     var id = this.documents[index]._id;
 
     id++;
+
+    }
+    catch(Error){
+
+      id = 1;
+    }
+
 
 
     const d: Date = new Date();

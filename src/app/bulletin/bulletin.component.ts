@@ -21,8 +21,37 @@ export class BulletinComponent implements OnInit {
     this._router.navigate(['/create'])
   }
 
-  view(){
-    alert ('View')
+  deleteDoc(id){
+
+    //console.log(id)
+
+    var c = confirm("Would you like to delete " + id.name + " from the bulletin?" );
+
+    if(c){
+      var index= 0;
+      this.documents.forEach(element => {
+
+
+        if(element == id){
+          console.log(id)
+          this.documents.splice(index, 1)
+        }else{
+          index++;
+        }
+
+
+
+      });
+    }
+
+
+
   }
 
+
 }
+
+
+
+
+

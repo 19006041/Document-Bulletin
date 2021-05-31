@@ -15,7 +15,7 @@
         <a  class="btn btn-outline-primary">View</a>
 
         <div class="divider"></div>
-        <a href="#" class="btn btn-outline-danger">Delete</a>
+        <button type="button" (click)="deleteDoc(document)" class="btn btn-outline-danger">Delete</button>
       </div>
       <div class="card-footer text-muted">
         {{document.date | date:'shortDate'}}
