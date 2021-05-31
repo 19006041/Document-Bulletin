@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   requiredEmailError = 'Email is required';
   invalidEmailError = 'Email is invalid';
   passwordError = 'Password is required';
+  loginError = '';
 
   loginUserData:any = {}
   constructor(private _auth: AuthService,
@@ -32,7 +33,10 @@ loginUser(logForm:NgForm){
         localStorage.setItem('token', res.token)
         this._router.navigate(['/bulletin'])
       },
-      err => console.log(err)
+      err => {
+        console.log(err)
+        this.loginError = 'Username or Password invalid'
+      }
     )
   }
 
