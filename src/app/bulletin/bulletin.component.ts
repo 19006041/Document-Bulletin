@@ -35,7 +35,7 @@ export class BulletinComponent implements OnInit {
       var index = 0;
       this.documents.forEach((element) => {
         if (element == id) {
-          console.log(id);
+          //console.log(id);
           this.documents.splice(index, 1);
         } else {
           index++;

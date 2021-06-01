@@ -47,7 +47,7 @@ export class CreateComponent implements OnInit {
       date: d,
     };
 
-    console.log(id);
+    //console.log(id);
     this.documents.push(doc);
     this._router.navigate(['/bulletin']);
   }
