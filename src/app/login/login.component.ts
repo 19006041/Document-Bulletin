@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/bulletin']);
         },
         (err) => {
+
+
+
           console.log(err);
           this.loginError = 'Username or Password invalid';
         }

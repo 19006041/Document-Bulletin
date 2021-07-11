@@ -64,7 +64,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngApp:build"
+            "browserTarget": "ngApp:build",
+            "ssl": true,
+            "sslKey": "D:\\VSCode\\BulletinApp\\server\\keys\\privatekey.pem",
+            "sslCert": "D:\\VSCode\\BulletinApp\\server\\keys\\certificate.crt"
           },
           "configurations": {
             "production": {
