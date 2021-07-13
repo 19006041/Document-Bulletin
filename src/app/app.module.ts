@@ -13,6 +13,8 @@ import { HttpInterceptor } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { BulletinService } from './bulletin.service';
 import { CreateComponent } from './create/create.component';
+import {HttpClientXsrfModule} from '@angular/common/http';
+import { LogService } from './shared/log.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { CreateComponent } from './create/create.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientXsrfModule
   ],
-  providers: [AuthService, BulletinService, AuthGuard, {
+  providers: [AuthService, BulletinService, AuthGuard, LogService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

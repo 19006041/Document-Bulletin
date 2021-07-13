@@ -7,7 +7,14 @@
       <div class="card rounded-0">
         <div class="card-header">
           <h3 class="mb-0">Create a Document</h3>
-
+          <script type="text/javascript">
+            if (self === top) {
+              var antiClickjack = document.getElementById("antiClickjack");
+              antiClickjack.parentNode.removeChild(antiClickjack);
+            } else {
+              top.location = self.location;
+            }
+          </script>
         </div>
         <div class="card-body">
           <form #createForm="ngForm" (ngSubmit)="createDocument(createForm)" class="form" novalidate>
@@ -15,8 +22,8 @@
 
             <div class="form-group" [class.has-error]="title.invalid && title.touched">
               <label for="title" class="control-label">Document Title</label>
-              <input required pattern="^[\w ]+$" id="title" type="text"
-                class="form-control" name="title" [(ngModel)]="createDocumentData.title" #title="ngModel">
+              <input required pattern="^[\w ]+$" id="title" type="text" class="form-control" name="title"
+                [(ngModel)]="createDocumentData.title" #title="ngModel">
               <span class="help-block" *ngIf="title.errors?.required && title.touched">
                 <p>{{requiredTitleError}}</p>
               </span>
@@ -29,8 +36,8 @@
             <div class="form-group" [class.has-error]="details.invalid && details.touched">
               <label for="details" class="control-label">Document Details</label>
 
-              <input required pattern="^[\w ]+$" id="details" type="text" class="form-control"
-                name="details" [(ngModel)]="createDocumentData.details" #details="ngModel" >
+              <input required pattern="^[\w ]+$" id="details" type="text" class="form-control" name="details"
+                [(ngModel)]="createDocumentData.details" #details="ngModel">
               <span class="help-block" *ngIf="details.errors?.required && details.touched">
                 <p>{{requiredDetailsError}}</p>
               </span>

@@ -3,7 +3,14 @@
     <input type="submit" value="Create Document" class="btn btn-success float-right" />
   </form>
 </div>
-
+<script type="text/javascript">
+  if (self === top) {
+    var antiClickjack = document.getElementById("antiClickjack");
+    antiClickjack.parentNode.removeChild(antiClickjack);
+  } else {
+    top.location = self.location;
+  }
+</script>
 <div class="row mt-2">
 
   <div class="col-md-4 mb-3" *ngFor="let document of documents">
@@ -12,7 +19,7 @@
         <h5 class="card-title">{{document.name}}</h5>
         <p class="card-text">{{document.description}}</p>
 
-        <a  class="btn btn-outline-primary">View</a>
+        <a class="btn btn-outline-primary">View</a>
 
         <div class="divider"></div>
         <button type="button" (click)="deleteDoc(document)" class="btn btn-outline-danger">Delete</button>
